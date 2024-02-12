@@ -8,9 +8,10 @@ public class PruebaVehiculos {
 
 	public static void main(String[] args) {
 		PruebaVehiculos pv = new PruebaVehiculos();
-		Autobus bus = new Autobus("Irizar I8", 2017, "Serie K", 3, 46);
-		Vehiculo v = new Autobus(bus.getModelo(),bus.getAnio(),bus.getMotor(),bus.getEjes(), bus.getNoPasajeros());
-		pv.probarVehiculos(v, true);
+		Autobus bus = new Autobus("Irizar I8", 2017, "Serie K", 3, 46, false);
+		Vehiculo v = new Autobus(bus.getModelo(),bus.getAnio(),bus.getMotor(),bus.getEjes(), bus.getNoPasajeros(), bus.isOn());
+		pv.probarVehiculos(v, v.isOn());
+		bus.viajar(v.isOn());
 		bus.openDoors();
 		bus.addPassengers(12);
 		bus.removePassengers(2);

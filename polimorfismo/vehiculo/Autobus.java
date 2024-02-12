@@ -5,6 +5,15 @@ public class Autobus extends Vehiculo implements Movible{
 	private String motor;
 	private int ejes;
 	private int noPasajeros;
+	private boolean isOn;
+
+	public boolean isOn() {
+		return isOn;
+	}
+
+	public void setOn(boolean isOn) {
+		this.isOn = isOn;
+	}
 
 	public String getMotor() {
 		return motor;
@@ -30,8 +39,9 @@ public class Autobus extends Vehiculo implements Movible{
 		this.noPasajeros = noPasajeros;
 	}
 
-	public Autobus(String modelo, int anio, String motor, int ejes, int noPasajeros) {
+	public Autobus(String modelo, int anio, String motor, int ejes, int noPasajeros, boolean isOn) {
 		super(modelo, anio);
+		this.isOn = isOn;
 		this.motor = motor;
 		this.ejes = ejes;
 		this.noPasajeros = noPasajeros;
